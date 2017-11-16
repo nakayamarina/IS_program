@@ -1,3 +1,5 @@
+//解答 (1)1, 0or3 (2)3 (3)3 (4)4 (5)6 (6)1
+
 #include<stdio.h>
 #include<stdlib.h>
 
