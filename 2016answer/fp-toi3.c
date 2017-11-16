@@ -9,15 +9,17 @@ int main()
 {
   int a = 3, b = 4, c = 5, d = 9;
 
-  c = Swap1(a, b);
-  printf("a=%d, b=%d, c=%d, d=%d\n", a, b, c ,d);
+  c = Swap1(a, b); // c = 3
+  printf("a=%d, b=%d, c=%d, d=%d\n", a, b, c ,d); // a=3, b=4, c=3. d=9
 
-  d = Swap2(&a, &b);
-  printf("a=%d, b=%d, c=%d, d=%d\n", a, b, c, d);
+  d = Swap2(&a, &b); // d=3
+  printf("a=%d, b=%d, c=%d, d=%d\n", a, b, c, d); // a=4, b=3, c=3, d=3
 
   return 0;
 }
 
+// aとbの入れ替えはこのSwap1関数内でのみ
+// aの値3が代入されたtmpを返す
 int Swap1(int a, int b){
   int tmp;
   tmp = a;
@@ -26,6 +28,9 @@ int Swap1(int a, int b){
   return tmp;
 }
 
+// aの値3が代入されたtmpを返す
+// またアドレスが渡すことで呼び出し元の関数(main)の変数の値の読み書きが可能
+// よってmain関数でもaとbの値は入れ替わっている
 int Swap2(int *a, int *b){
   int tmp;
   tmp = *a;
